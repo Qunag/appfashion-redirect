@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Redirecting to App...</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script>
+        const query = new URLSearchParams(window.location.search);
+        const token = query.get("token");
+        if (token) {
+            // Redirect to deep link
+            window.location.href = `appfashion://reset-password/${token}`;
+        } else {
+            document.body.innerText = "Invalid or missing token!";
+        }
+    </script>
+</head>
+
+<body>
+    <p>Redirecting to app...</p>
+</body>
+
+</html>
