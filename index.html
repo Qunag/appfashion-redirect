@@ -1,0 +1,21 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Redirecting...</title>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const token = params.get('token');
+    if (token) {
+      // Đổi scheme thành tên bạn đặt trong app.json
+      window.location.href = `appfashion://reset-password/${token}`;
+    } else {
+      document.body.innerText = 'Missing token!';
+    }
+  </script>
+</head>
+<body>
+  Redirecting to app...
+</body>
+</html>
